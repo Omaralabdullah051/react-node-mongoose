@@ -8,7 +8,11 @@ const Todo = () => {
         // fetch('http://localhost:5000/todo/todo')
         // fetch('http://localhost:5000/todo/')
         // fetch('http://localhost:5000/todo/todolimit')
-        fetch('http://localhost:5000/todo/language')
+        fetch('http://localhost:5000/todo/', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => {
                 console.log(res);
                 return res.json();
